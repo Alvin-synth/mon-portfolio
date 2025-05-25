@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alvin SAYANTHAN</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Font Awesome pour les icônes (assurez-vous d'avoir une connexion internet ou téléchargez-le) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ======================= SIDEBAR ======================= -->
+    <aside class="sidebar">
+        <div class="profile-section">
+            <h1 class="profile-name">Alvin SAYANTHAN</h1>
+            <div class="linkedin-icon">
+                <a href="https://www.linkedin.com/in/alvin-sayanthan" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li>
+                    <a href="#" class="nav-link active" data-target="accueil">
+                        <i class="fas fa-home nav-icon"></i>
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="apropos">
+                        <i class="fas fa-user nav-icon"></i>
+                        À Propos
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="parcours">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        Parcours
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="projets">
+                        <i class="fas fa-briefcase nav-icon"></i>
+                        Projets
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="veilles">
+                        <i class="fas fa-search-plus nav-icon"></i>
+                        Veilles
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="contact">
+                        <i class="fas fa-envelope nav-icon"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <footer class="sidebar-footer">
+            <p>© <span id="currentYear"></span> Alvin Sayanthan. <br>Tous droits réservés.</p>
+        </footer>
+    </aside>
+
+    <!-- ======================= MAIN CONTENT ======================= -->
+    <main class="main-content">
+
+        <!-- Section Accueil -->
+        <section id="accueil" class="content-section active-section">
+            <div class="hero-banner">
+                <h2 class="hero-title">Alvin SAYANTHAN</h2>
+                <p class="hero-subtitle">Étudiant en informatique, spécialisation SISR (Solutions d’Infrastructure, Systèmes et Réseaux).</p>
+                <h3 class="hero-degree">Étudiant BTS SIO - Option SISR</h3>
+                <p class="hero-intro">
+                    Bienvenue sur mon portfolio ! Actuellement étudiant en BTS SIO, option SISR,
+                    je vous invite à découvrir mes projets, compétences et expériences dans le domaine de l’informatique.
+                    Explorez les différentes sections pour en savoir plus !
+                </p>
+            </div>
+            <div class="quick-links">
+                <a href="#" class="quick-link-btn" data-target="projets">Voir mes Projets <i class="fas fa-arrow-right"></i></a>
+                <a href="assets/CV_Alvin_SAYANTHAN.pdf" class="quick-link-btn" target="_blank" download>Télécharger CV <i class="fas fa-download"></i></a>
+            </div>
+        </section>
+
+        <!-- Section À Propos -->
+        <section id="apropos" class="content-section">
+            <h2 class="section-title">À Propos de Moi</h2>
+            <div class="profile-container-main">
+               <div class="profile-info-main">
+                    <p>Passionné par l'informatique depuis mon plus jeune âge, je me suis naturellement orienté vers le domaine des systèmes et réseaux. Curieux et rigoureux, j'aime comprendre le fonctionnement des infrastructures IT et relever les défis techniques.</p>
+                    <p>Actuellement en BTS SIO option SISR, je développe des compétences solides en administration système, virtualisation, sécurité et gestion de réseaux. Je suis toujours à la recherche de nouvelles connaissances et d'opportunités pour mettre en pratique ce que j'apprends.</p>
+                    <h4>Informations Clés</h4>
+                    <ul>
+                        <li><strong>Nom :</strong> SAYANTHAN</li>
+                        <li><strong>Prénom :</strong> Alvin</li>
+                        <li><strong>Formation :</strong> BTS Services Informatiques aux Organisations - SISR</li>
+                        <li><strong>Compétences :</strong> Administration Linux/Windows, Cisco, Virtualisation (VMware, Hyper-V), Scripting (Bash, PowerShell), Sécurité Réseau...</li>
+                    </ul>
+                    <a href="CV Alvin SAYANTHAN.pdf" class="btn-primary" target="_blank" download="CV_Alvin_SAYANTHAN.pdf">
+                        <i class="fas fa-file-pdf"></i> Télécharger mon CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Parcours -->
+       <!-- Section Parcours -->
+<section id="parcours" class="content-section">
+    <h2 class="section-title">Mon Parcours</h2>
+
+    <!-- Sous-section Formations -->
+    <div class="parcours-category">
+        <h3 class="category-title">
+            <i class="fas fa-user-graduate"></i> Formations
+        </h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <p>Septembre 2024</p>
+                    <p>Juillet 2026</p>
+                </div>
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon"><i class="fas fa-circle"></i></div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Brevet de technicien supérieur Services Informatiques aux Organisations - option SISR</h4>
+                    <p class="timeline-subtitle">(Solution d'Infrastructure, Systèmes et Réseaux)</p>
+                    <p class="timeline-location">Lycée René Descartes, Champs-sur-Marne (77)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <p>Juillet 2023</p>
+                </div>
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon"><i class="fas fa-circle"></i></div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Baccalauréat professionnel Systèmes Numériques - option RISC</h4>
+                    <p class="timeline-subtitle">(Réseaux informatiques et systèmes communicants)</p>
+                    <p class="timeline-location">Lycée Clément Ader, Tournan-en-Brie (77)</p>
+                </div>
+            </div>
+            <!-- Ajoutez d'autres formations ici -->
+        </div>
+    </div>
+
+    <!-- Sous-section Expériences Professionnelles -->
+    <div class="parcours-category">
+        <h3 class="category-title">
+            <i class="fas fa-briefcase"></i> Expériences Professionnelles
+        </h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <p>6 au 31</p>
+                    <p>Mars 2023</p>
+                </div>
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon"><i class="fas fa-circle"></i></div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Stagiaire Professionnel - INSEEC Paris</h4>
+                    <ul class="experience-details">
+                        <li>Installation de Windows 10 pour les utilisateurs</li>
+                        <li>Interventions extérieures (salles de cours, bureaux)</li>
+                        <li>Configuration d'un projecteur EPSON</li>
+                        <li>Câblage pour faciliter la liaison entre un PC et un écran tactile (CleverTouch)</li>
+                        <li>Utilisation de Clonezilla pour installer 10 PCs avec la même configuration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <p>Novembre 2022</p>
+                    <p>Décembre 2022</p>
+                </div>
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon"><i class="fas fa-circle"></i></div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Stagiaire Professionnel - Arvato Bussy-Saint-Georges</h4>
+                     <ul class="experience-details">
+                        <li>Configuration d'un auto-pilot Windows pour configurer des nouveaux appareils</li>
+                        <li>Interventions extérieures (sites, entrepôt)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <p>Mai 2022</p>
+                    <p>Juillet 2022</p>
+                </div>
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon"><i class="fas fa-circle"></i></div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Stagiaire Professionnel - Arvato Bussy-Saint-Georges</h4>
+                    <ul class="experience-details">
+                        <li>Configuration des switchs Cisco (modèle : 3750, 2690)</li>
+                        <li>Installation de Windows 10 pour les utilisateurs</li>
+                        <li>Installation d'imprimantes sans fil</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="timeline-item">
+                <div class="timeline-date">
+                    <p>Mai 2021</p>
+                    <p>Juillet 2021</p>
+                </div>
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon"><i class="fas fa-circle"></i></div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Stagiaire Professionnel - Conseil départemental de Seine-et-Marne</h4>
+                    <ul class="experience-details">
+                        <li>Installation de Windows 10 pour des collèges</li>
+                        <li>Montage de PC dans des collèges</li>
+                        <li>Rédaction de scripts sur un fichier batch pour installer des logiciels (Google, VLC Media Player, etc)</li>
+                        <li>Utilisation d'un serveur Windows</li>
+                        <li>Interventions extérieures dans des collèges</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Ajoutez d'autres expériences ici -->
+        </div>
+    </div>
+</section>
+
+        <!-- Section Projets -->
+        <section id="projets" class="content-section">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="assets/placeholder-projet.png" alt="Nom du Projet 1">
+                    <div class="project-info">
+                        <h3>Nom du Projet 1</h3>
+                        <p>Brève description du projet et des technologies utilisées.</p>
+                        <a href="#" class="btn-secondary">Voir Détails <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/placeholder-projet.png" alt="Nom du Projet 2">
+                    <div class="project-info">
+                        <h3>Nom du Projet 2</h3>
+                        <p>Brève description du projet et des technologies utilisées.</p>
+                        <a href="#" class="btn-secondary">Voir Détails <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/placeholder-projet.png" alt="Nom du Projet 3">
+                    <div class="project-info">
+                        <h3>Nom du Projet 3</h3>
+                        <p>Brève description du projet et des technologies utilisées.</p>
+                        <a href="#" class="btn-secondary">Voir Détails <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres cartes de projet -->
+            </div>
+        </section>
+
+       <!-- Section Veilles -->
+<!-- Section Veilles -->
+<section id="veilles" class="content-section">
+    <h2 class="section-title">Veille Technologique : L'IA dans la Finance</h2>
+    <p class="veille-intro">
+        Suivi en temps réel des dernières actualités sur l'intelligence artificielle appliquée au secteur financier,
+        alimenté par mes alertes Google.
+    </p>
+
+    <!-- Conteneur pour les articles du flux RSS Google Alert -->
+    <div id="google-alerts-feed-container" class="veille-articles-grid">
+        <p class="loading-feed">Chargement des dernières alertes...</p>
+        <!-- Les articles du flux seront injectés ici par JavaScript -->
+    </div>
+
+    <h3 class="subsection-title">Articles Clés Sélectionnés</h3>
+    <div class="veille-articles-grid manual-articles">
+        <!-- Vos cartes d'articles sélectionnés manuellement peuvent rester ici si vous le souhaitez -->
+        <article class="veille-article-card">
+            <img src="assets/placeholder-bitcoin-news.jpg" alt="Illustration IA et Blockchain" class="veille-article-image"> <!-- Image Manuelle -->
+            <div class="veille-article-content">
+                <h3>Ethereum Challenger Reel: Lightchain décentralise l'IA Cerveau sur Blockchain est presque là</h3>
+                <p class="veille-source">Source: news.bitcoin.com</p>
+                <p class="veille-summary">
+                    Exploration de la décentralisation de l'IA via la blockchain pour des applications financières.
+                </p>
+                <a href="https://www.google.com/url?rct=j&sa=t&url=https://news.bitcoin.com/fr/ethereum-challenger-reel-lightchain-decentralise-ia-cerveau-sur-blockchain-est-presque-la/&ct=ga&cd=CAAYAzIZNjFlZGM4NGNmOTc5ODNhNDpmcjpmcjpGUg&usg=AOvVaw0CR-mqPAQYqmh0v8osaDLj&_gl=1*j7bl3s*_ga*MTE0OTc5MzY5MS4xNzQ3Mjk5ODcz*_ga_B6XPBQ150N*czE3NDgxOTY1MjEkbzYkZzAkdDE3NDgxOTY1MjEkajAkbDAkaDA." class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                    Lire l'article <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </article>
+        <!-- ... autres articles sélectionnés manuellement ... -->
+    </div>
+
+    <div class="veille-tools">
+        <h4>Outils et Méthodes de Veille</h4>
+        <ul>
+            <li><i class="fab fa-google"></i> Google Alerts pour un suivi automatisé sur "L'IA dans la finance".</li>
+            <li><i class="fas fa-rss"></i> Agrégateurs de flux RSS (ex: Feedly) pour d'autres sources.</li>
+            <!-- ... autres outils ... -->
+        </ul>
+    </div>
+</section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="content-section">
+            <h2 class="section-title">Contactez-moi</h2>
+            <p>N'hésitez pas à me contacter pour toute question, proposition de projet ou opportunité professionnelle. Je serai ravi d'échanger avec vous !</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet :</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Envoyer Message</button>
+            </form>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:alvin.synth.pro@gmail.com">alvin.synth.pro@gmail.com</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/alvin-sayanthan" target="_blank">linkedin.com/in/alvin-sayanthan</a></p>
+                <!-- Ajoutez d'autres infos de contact si besoin -->
+            </div>
+        </section>
+
+    </main>
+    <script src="veilles.js"></script>
+    <script>
+        // JavaScript pour la navigation et l'année en cours
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link, .quick-link-btn');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function showSection(targetId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active-section');
+                });
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active-section');
+                }
+
+                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+                 // Mettre à jour l'URL sans recharger la page
+                if (history.pushState) {
+                    history.pushState(null, null, `#${targetId}`);
+                } else {
+                    window.location.hash = `#${targetId}`;
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const targetId = link.dataset.target;
+                    showSection(targetId);
+                });
+            });
+
+            // Gérer le hash initial dans l'URL (pour les favoris/partage/rechargement)
+            let initialTarget = 'accueil'; // Section par défaut
+            if (window.location.hash) {
+                const hashId = window.location.hash.substring(1);
+                if (document.getElementById(hashId)) { // Vérifie si la section existe
+                    initialTarget = hashId;
+                }
+            }
+            showSection(initialTarget);
+
+            // Mettre à jour l'année en cours dans le footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+        
+    </script>
+</body>
+</html>
+git init
+git branch -M main  # S'assure que la branche principale s'appelle 'main'
+git remote add origin https://github.com/Alvin-synth/mon-portefeuille.git
+git add .
+git commit -m "Premier commit du portfolio complet"
+git push -u origin main
