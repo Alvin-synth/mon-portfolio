@@ -6,7 +6,7 @@ async function fetchAndDisplayGoogleAlerts() {
     }
 
     // L'URL de votre flux RSS Google Alert
-    const googleAlertRssUrl = 'https://www.google.fr/alerts/feeds/00423473392342493047/9372069927424274046' ; // Votre URL est ici
+    const googleAlertRssUrl = 'https://www.google.fr/alerts/feeds/00423473392342493047/12699287199964468269' ; // Votre URL est ici
 
     const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(googleAlertRssUrl)}`;
     console.log("URL envoyée à rss2json:", apiUrl);
