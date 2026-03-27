@@ -437,6 +437,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
+
+ <script src="veilles.js"></script>
+    <script>
+        // JavaScript pour la navigation et l'année en cours
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link, .quick-link-btn');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function showSection(targetId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active-section');
+                });
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active-section');
+                }
+
+                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+                 // Mettre à jour l'URL sans recharger la page
+                if (history.pushState) {
+                    history.pushState(null, null, `#${targetId}`);
+                } else {
+                    window.location.hash = `#${targetId}`;
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const targetId = link.dataset.target;
+                    showSection(targetId);
+                });
+            });
+
+            // Gérer le hash initial dans l'URL (pour les favoris/partage/rechargement)
+            let initialTarget = 'accueil'; // Section par défaut
+            if (window.location.hash) {
+                const hashId = window.location.hash.substring(1);
+                if (document.getElementById(hashId)) { // Vérifie si la section existe
+                    initialTarget = hashId;
+                }
+            }
+            showSection(initialTarget);
+
+            // Mettre à jour l'année en cours dans le footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+        
+    
 </script>
 </body>
 </html>
