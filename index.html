@@ -3,549 +3,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Alvin SAYANTHAN</title>
+    <title>Portfolio — Alvin SAYANTHAN</title>
     <link rel="stylesheet" href="main.css">
-    <!-- Font Awesome pour les icônes (assurez-vous d'avoir une connexion internet ou téléchargez-le) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ======================= SIDEBAR ======================= -->
-    <aside class="sidebar">
-        <div class="profile-section">
-            <h1 class="profile-name">Alvin SAYANTHAN</h1>
-            <div class="linkedin-icon">
-                <a href="https://www.linkedin.com/in/alvin-sayanthan" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
+<!-- Hamburger -->
+<button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+</button>
+<div class="overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <div class="profile-section">
+        <div class="profile-badge">Portfolio 2026</div>
+        <h1 class="profile-name">Alvin<br>SAYANTHAN</h1>
+        <div class="linkedin-icon">
+            <a href="https://www.linkedin.com/in/alvin-sayanthan" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
         </div>
+    </div>
 
-        <nav class="nav-menu">
-            <ul>
-                <li>
-                    <a href="#" class="nav-link active" data-target="accueil">
-                        <i class="fas fa-home nav-icon"></i>
-                        Accueil
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link" data-target="apropos">
-                        <i class="fas fa-user nav-icon"></i>
-                        À Propos
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link" data-target="parcours">
-                        <i class="fas fa-graduation-cap nav-icon"></i>
-                        Parcours
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link" data-target="projets">
-                        <i class="fas fa-briefcase nav-icon"></i>
-                        Projets
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link" data-target="veilles">
-                        <i class="fas fa-search-plus nav-icon"></i>
-                        Veilles
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link" data-target="contact">
-                        <i class="fas fa-envelope nav-icon"></i>
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#" class="nav-link active" data-target="accueil"><i class="fas fa-home nav-icon"></i>Accueil</a></li>
+            <li><a href="#" class="nav-link" data-target="apropos"><i class="fas fa-user nav-icon"></i>À Propos</a></li>
+            <li><a href="#" class="nav-link" data-target="parcours"><i class="fas fa-graduation-cap nav-icon"></i>Parcours</a></li>
+            <li><a href="#" class="nav-link" data-target="projets"><i class="fas fa-briefcase nav-icon"></i>Projets</a></li>
+            <li><a href="#" class="nav-link" data-target="veilles"><i class="fas fa-search-plus nav-icon"></i>Veilles</a></li>
+            <li><a href="#" class="nav-link" data-target="contact"><i class="fas fa-envelope nav-icon"></i>Contact</a></li>
+        </ul>
+    </nav>
 
-        <footer class="sidebar-footer">
-            <p>© <span id="currentYear"></span> Alvin Sayanthan. <br>Tous droits réservés.</p>
-        </footer>
-    </aside>
+    <footer class="sidebar-footer">
+        <p>© <span id="currentYear"></span> Alvin Sayanthan.<br>Tous droits réservés.</p>
+    </footer>
+</aside>
 
-    <!-- ======================= MAIN CONTENT ======================= -->
-    <main class="main-content">
+<!-- MAIN -->
+<main class="main-content">
 
-        <!-- Section Accueil -->
-        <section id="accueil" class="content-section active-section">
-            <div class="hero-banner">
-                <h2 class="hero-title">Alvin SAYANTHAN</h2>
-                <p class="hero-subtitle">Étudiant en informatique, spécialisation SISR (Solutions d’Infrastructure, Systèmes et Réseaux).</p>
-                <h3 class="hero-degree">Étudiant BTS SIO - Option SISR</h3>
-                <p class="hero-intro">
-                    Bienvenue sur mon portfolio ! Actuellement étudiant en BTS SIO, option SISR,
-                    je vous invite à découvrir mes projets, compétences et expériences dans le domaine de l’informatique.
-                    Explorez les différentes sections pour en savoir plus !
-                </p>
-            </div>
+    <!-- ACCUEIL -->
+    <section id="accueil" class="content-section active-section">
+        <div class="hero-banner">
+            <h2 class="hero-title">Alvin SAYANTHAN</h2>
+            <p class="hero-subtitle">Étudiant en informatique — Spécialisation SISR</p>
+            <h3 class="hero-degree">BTS SIO · Option SISR</h3>
+            <p class="hero-intro">Bienvenue sur mon portfolio ! Découvrez mes projets, compétences et expériences dans le domaine des réseaux et systèmes.</p>
             <div class="quick-links">
                 <a href="#" class="quick-link-btn" data-target="projets">Voir mes Projets <i class="fas fa-arrow-right"></i></a>
                 <a href="assets/CV_Alvin_SAYANTHAN.pdf" class="quick-link-btn" target="_blank" download>Télécharger CV <i class="fas fa-download"></i></a>
             </div>
-        </section>
-
-        <!-- Section À Propos -->
-       <section id="apropos" class="content-section">
-    <div class="section-header">
-        <h2 class="modern-title">À Propos de Moi</h2>
-        <div class="title-underline"></div>
-    </div>
-
-    <p class="about-description">
-        Étudiant en <strong>BTS SIO option SISR</strong>, je me spécialise dans le déploiement et la maintenance d'infrastructures informatiques. 
-        Alliant rigueur technique et esprit d'analyse, je recherche des opportunités concrètes pour appliquer mes compétences 
-        en virtualisation, sécurité et gestion de parc informatique.
-    </p>
-
-    <div class="about-grid">
-        <div class="info-card">
-            <h3><i class="fas fa-id-card"></i> Informations Clés</h3>
-            <ul class="info-list">
-                <li><span>Nom :</span> SAYANTHAN</li>
-                <li><span>Prénom :</span> Alvin</li>
-                <li><span>Formation :</span> BTS SIO - SISR</li>
-                <li><span>Localisation :</span> Seine-et-Marne (77)</li>
-            </ul>
         </div>
+    </section>
 
-        <div class="info-card tech-card">
-            <h3><i class="fas fa-microchip"></i> Stack Technique</h3>
-            <div class="skill-tags">
-                <span class="tag">Windows Server</span>
-                <span class="tag">Debian / Linux</span>
-                <span class="tag">Cisco Networking</span>
-                <span class="tag">VMware / VirtualBox</span>
-                <span class="tag">Active Directory</span>
-                <span class="tag">Scripting Bash/PS</span>
+    <!-- À PROPOS -->
+    <section id="apropos" class="content-section">
+        <div class="section-header">
+            <h2 class="modern-title">À Propos de Moi</h2>
+            <div class="title-underline"></div>
+        </div>
+        <p class="about-description">Étudiant en <strong>BTS SIO option SISR</strong>, je me spécialise dans le déploiement et la maintenance d'infrastructures informatiques. Alliant rigueur technique et esprit d'analyse, je recherche des opportunités concrètes pour appliquer mes compétences en virtualisation, sécurité et gestion de parc informatique.</p>
+        <div class="about-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-id-card"></i> Informations Clés</h3>
+                <ul class="info-list">
+                    <li><span>Nom :</span> SAYANTHAN</li>
+                    <li><span>Prénom :</span> Alvin</li>
+                    <li><span>Formation :</span> BTS SIO - SISR</li>
+                    <li><span>Localisation :</span> Seine-et-Marne (77)</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-microchip"></i> Stack Technique</h3>
+                <div class="skill-tags">
+                    <span class="tag">Windows Server</span>
+                    <span class="tag">Debian / Linux</span>
+                    <span class="tag">Cisco Networking</span>
+                    <span class="tag">VMware / VirtualBox</span>
+                    <span class="tag">Active Directory</span>
+                    <span class="tag">Scripting Bash/PS</span>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="cv-wrapper">
-        <a href="CV Alvin SAYANTHAN.pdf" class="btn-modern-cv" target="_blank">
-            <i class="fas fa-file-pdf"></i> Télécharger mon CV
-        </a>
-    </div>
-</section>
-
-        <!-- Section Parcours -->
-       <!-- Section Parcours -->
-<section id="parcours" class="content-section">
-    <div class="section-header">
-        <h2 class="modern-title">Mon Parcours</h2>
-        <div class="title-underline"></div>
-    </div>
-
-    <div class="parcours-category">
-        <h3 class="category-title">
-            <i class="fas fa-book-reader"></i> Formations 
-        </h3>
-        <div class="timeline">
-            
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>2024 - 2026</span>
-                </div>
-                <div class="timeline-card formation-card">
-                    <h4>BTS Services Informatiques aux Organisations (SIO)</h4>
-                    <p class="timeline-subtitle">Option SISR (Solution d'Infrastructure, Systèmes et Réseaux)</p>
-                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lycée René Descartes, Champs-sur-Marne (77)</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>2023</span>
-                </div>
-                <div class="timeline-card formation-card">
-                    <h4>Baccalauréat Professionnel Systèmes Numériques (SN)</h4>
-                    <p class="timeline-subtitle">Option RISC (Réseaux informatiques et systèmes communicants)</p>
-                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lycée Clément Ader, Tournan-en-Brie (77)</p>
-                </div>
-            </div>
-            </div>
-    </div>
-
-    <div class="stage-report-highlight">
-    <div class="report-icon">
-        <i class="fas fa-file-pdf"></i>
-    </div>
-    <div class="report-text">
-        <h3>Compte Rendu de Stage - Arvato</h3>
-        <p>Retrouvez l'analyse complète de mes missions, les problématiques rencontrées et les solutions techniques apportées lors de mes deux stages des deux années de BTS.</p>
-    </div>
-    <div class="report-action">
-        <a href="Compte rendu - Arvato.pdf" target="_blank" class="btn-report-modern">
-            Consulter le PDF <i class="fas fa-external-link-alt"></i>
-        </a>
-    </div>
-</div>
-
-    <div class="parcours-category">
-        <h3 class="category-title">
-            <i class="fas fa-briefcase"></i> Expériences Professionnelles
-        </h3>
-        <div class="timeline">
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Jan - Mars 2026</span>
-                </div>
-                <div class="timeline-card experience-card">
-                    <h4>Stagiaire support IT</h4>
-                    <p class="timeline-subtitle">Arvato, Chanteloup-en-Brie</p>
-                    <ul class="experience-details">
-                        <li>Interventions techniques en entrepôt logistique.</li>
-                        <li>Déploiement et installation de postes de travail Windows 11.</li>
-                        <li>Gestion et résolution de tickets d'incidents via Jira.</li>
-                    </ul>
-                    <div class="experience-actions">
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Juillet 2025</span>
-                </div>
-                <div class="timeline-card experience-card">
-                    <h4>CDD Technicien Support IT (1 mois)</h4>
-                    <p class="timeline-subtitle">Arvato, Chanteloup-en-Brie</p>
-                    <ul class="experience-details">
-                        <li>Interventions extérieures (entrepôt).</li>
-                        <li>Gestion de tickets incidents (Jira).</li>
-                        <li>Installation de postes pour un projet spécifique (Beta).</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Juin - Juil 2025</span>
-                </div>
-                <div class="timeline-card experience-card">
-                    <h4>Stagiaire support IT</h4>
-                    <p class="timeline-subtitle">Arvato, Chanteloup-en-Brie</p>
-                    <ul class="experience-details">
-                        <li>Interventions extérieures (entrepôt) et installation de postes Windows 11.</li>
-                        <li>Installation de lecteurs de badges pour authentification logiciel.</li>
-                        <li>Gestion de tickets incidents (Jira) et projet spécifique (Beta).</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Mars 2023</span>
-                </div>
-                <div class="timeline-card experience-card">
-                    <h4>Stagiaire Support IT</h4>
-                    <p class="timeline-subtitle">INSEEC, Paris</p>
-                    <ul class="experience-details">
-                        <li>Installation de PC Windows 10 et interventions sur site (salles, bureaux).</li>
-                        <li>Gestion de tickets via GLPI et configuration de projecteurs EPSON.</li>
-                        <li>Câblage CleverTouch et clonage de postes via Clonezilla (x10).</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Nov - Déc 2022</span>
-                </div>
-                <div class="timeline-card experience-card">
-                    <h4>Stagiaire support IT</h4>
-                    <p class="timeline-subtitle">Arvato, Bussy-Saint-Georges</p>
-                    <ul class="experience-details">
-                        <li>Gestion de tickets incidents via Jira.</li>
-                        <li>Configuration d'Auto-Pilot Windows pour nouveaux appareils.</li>
-                        <li>Interventions extérieures (sites, entrepôt).</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Mai - Juil 2022</span>
-                </div>
-                <div class="timeline-card experience-card">
-                    <h4>Stagiaire support IT</h4>
-                    <p class="timeline-subtitle">Arvato, Bussy-Saint-Georges</p>
-                    <ul class="experience-details">
-                        <li>Configuration de switchs Cisco (modèles 3750, 2690).</li>
-                        <li>Installation de Windows 10 et d'imprimantes sans fil.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Mai - Juil 2021</span>
-                </div>
-                <div class="timeline-card experience-card">
-                    <h4>Stagiaire technicien informatique</h4>
-                    <p class="timeline-subtitle">Conseil Départemental 77, Melun</p>
-                    <ul class="experience-details">
-                        <li>Installation et montage de PC Windows 10 en collèges.</li>
-                        <li>Rédaction de scripts batch pour installation automatisée de logiciels.</li>
-                        <li>Utilisation de serveur Windows et interventions extérieures.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div> 
-    </div>
-
-    <div class="parcours-category complemented">
-        <h3 class="category-title">
-            <i class="fas fa-utensils"></i> Expériences Complémentaires
-        </h3>
-        <div class="timeline"> 
-            
-            <div class="timeline-item">
-                <div class="timeline-date">
-                    <span>Avril 2023 - Aujourd'hui</span>
-                </div>
-                <div class="timeline-card complement-card">
-                    <h4>Job étudiant / Extra - Service Hôtellerie</h4>
-                    <p class="timeline-subtitle">Novotel, Collégien</p>
-                    <ul class="experience-details">
-                        <li>Service en salle et accueil d’une clientèle internationale (anglais utilisé).</li>
-                        <li>Rigueur dans l'application des normes d'hygiènes et de sécurité.</li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
-    </div>
-</section>
-
-
-    </div> </div>
-            <!-- Ajoutez d'autres expériences ici -->
-        </div>
-    </div>
-</section>
-
-        <!-- Section Projets -->
-        <section id="projets" class="content-section">
-            <h2 class="section-title">Mes Projets</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Windows Server 2022</h3>
-                        <p>Installation d'Active Directory, configuration du GPO</p>
-                        <a href="Windows Server 2022 - Active Directory, GPO, déploiement et Powershell.pdf" class="btn-secondary">Voir Détails <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Failover Heartbeat et LVS (Linux Virtual Server)</h3>
-                        <p>Déploiment d'un Failover avec l'aide d'Heartbeat</p>
-                        <a href="FAILOVER HEARBEAT ET LVS.pdf" class="btn-secondary">Voir Détails <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Tolérance de panne disques RAID sous Debian</h3>
-                        <p>Installer et mettre en œuvre une solution RAID1 et RAID5</p>
-                        <a href="Tolérance de panne disques RAID sous Debian.pdf" class="btn-secondary">Voir Détails <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>NextCloud</h3>
-                        <p>Installation de NextCloud</p>
-                        <a href="NextCloud.pdf" class="btn-secondary">Voir Détails <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-            </div>
-        </section>
-
-       <!-- Section Veilles -->
-<!-- Section Veilles -->
-<section id="veilles" class="content-section">
-    <h2 class="section-title">Veille Technologique : L'authentification multifacteur</h2>
-    <p class="veille-intro">
-        Suivi en temps réel des dernières actualités sur les enjeux et évolutions de l'authentification multifacteur (MFA) et de la sécurisation des accès,
-        alimenté par mes alertes Google.
-    </p>
-    <div class="veille-synthese-container">
-    <div class="synthese-card">
-        <div class="synthese-icon">
-            <i class="fas fa-file-pdf"></i>
-        </div>
-        <div class="synthese-info">
-            <h3>Synthèse de Veille Technologique</h3>
-            <p>Consultez ma note de synthèse détaillant le choix du sujet, la méthodologie adoptée et l'analyse des enjeux du MFA.</p>
-        </div>
-        <div class="synthese-action">
-            <a href="Veille Techno - l'authentification MFA - Alvin.pdf" target="_blank" class="btn-synthese">
-                <i class="fas fa-download"></i> Télécharger la synthèse
+        <div class="cv-wrapper">
+            <a href="CV Alvin SAYANTHAN.pdf" class="btn-modern-cv" target="_blank">
+                <i class="fas fa-file-pdf"></i> Télécharger mon CV
             </a>
         </div>
-    </div>
-</div>
-    
+    </section>
 
-    <!-- Conteneur pour les articles du flux RSS Google Alert -->
-    <div id="google-alerts-feed-container" class="veille-articles-grid">
-        <p class="loading-feed">Chargement des dernières alertes...</p>
-        <!-- Les articles du flux seront injectés ici par JavaScript -->
-    </div>
+    <!-- PARCOURS -->
+    <section id="parcours" class="content-section">
+        <div class="section-header">
+            <h2 class="modern-title">Mon Parcours</h2>
+            <div class="title-underline"></div>
+        </div>
 
-    <h3 class="subsection-title">Articles Clés Sélectionnés</h3>
-    <div class="veille-articles-grid manual-articles">
-        <!-- Vos cartes d'articles sélectionnés manuellement peuvent rester ici si vous le souhaitez -->
-        <article class="veille-article-card">
-            <div class="veille-article-content">
-                <h3>La récente fuite de données médicales des Français </h3>
-                <p class="veille-source">Source: x.com</p>
-                <p class="veille-summary">
-                    Exploration sur la fuite de données venant d'une cyberattaque
-                </p>
-                <a href="https://www.google.com/url?rct=j&sa=t&url=https://x.com/Fraslin/status/2030045186563396072&ct=ga&cd=CAIyGTM3MTkwYjZiYmU3ZTU2Yjc6ZnI6ZnI6RlI&usg=AOvVaw3L3nf58FHt8Pwbq6ZTeVZo" btn-secondary target="_blank" rel="noopener noreferrer">
-                    Lire l'article <i class="fas fa-external-link-alt"></i>
-                </a>
+        <div class="parcours-category">
+            <h3 class="category-title"><i class="fas fa-book-reader"></i> Formations</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 – 2026</div>
+                    <div class="timeline-card formation-card">
+                        <h4>BTS Services Informatiques aux Organisations (SIO)</h4>
+                        <p class="timeline-subtitle">Option SISR – Solution d'Infrastructure, Systèmes et Réseaux</p>
+                        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lycée René Descartes, Champs-sur-Marne (77)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-card formation-card">
+                        <h4>Baccalauréat Professionnel Systèmes Numériques (SN)</h4>
+                        <p class="timeline-subtitle">Option RISC – Réseaux informatiques et systèmes communicants</p>
+                        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lycée Clément Ader, Tournan-en-Brie (77)</p>
+                    </div>
+                </div>
             </div>
-        </article>
-         <article class="veille-article-card">
-            <div class="veille-article-content">
-                <h3>Pourquoi les menaces liées à la cybersécurité se multiplient ?</h3>
-                <p class="veille-source">Source: timefrance.fr</p>
-                <p class="veille-summary">
-                    Exploration sur l'impact de l'IA dans la cybersécurité
-                </p>
-                <a href="https://www.timefrance.fr/idees/pourquoi-les-menaces-liees-a-la-cybersecurite-se-multiplient/" btn-secondary target="_blank" rel="noopener noreferrer">
-                    Lire l'article <i class="fas fa-external-link-alt"></i>
-                </a>
+        </div>
+
+        <div class="stage-report-highlight">
+            <div class="report-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="report-text">
+                <h3>Compte Rendu de Stage — Arvato</h3>
+                <p>Analyse complète de mes missions, problématiques et solutions techniques apportées lors de mes deux stages BTS.</p>
             </div>
-        </article>
-    </div>
-
-    <div class="veille-tools">
-        <h4>Outils et Méthodes de Veille</h4>
-        <ul>
-            <li><i class="fab fa-google"></i> Google Alerts pour un suivi automatisé sur "L'authentification multifacteur".</li>
-            <li><i class="fas fa-rss"></i> Agrégateurs de flux RSS (ex: Feedly) pour d'autres sources.</li>
-            <!-- ... autres outils ... -->
-        </ul>
-    </div>
-</section>
-
-        <!-- Section Contact -->
-      <section id="contact" class="content-section">
-    <div class="section-header">
-        <h2 class="modern-title">Contact</h2>
-        <div class="title-underline"></div>
-    </div>
-
-    <div class="contact-card-premium">
-        <div class="contact-sidebar">
-            <h3>N'hésitez pas à me contacter !</h3>
-            <p>Ravi d'échanger sur des opportunités professionnelles ou des collaborations techniques.</p>
-            
-            <div class="quick-contact-methods">
-                <a href="mailto:alvin.synth.pro@gmail.com" class="method-item" aria-label="Email">
-                    <i class="fas fa-at"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/alvin-sayanthan" target="_blank" class="method-item" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+            <div class="report-action">
+                <a href="Compte rendu - Arvato.pdf" target="_blank" class="btn-report-modern">
+                    Consulter le PDF <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
         </div>
 
-        <div class="contact-form-premium">
-            <form action="https://formsubmit.co/alvin.synth.pro@gmail.com" method="POST" class="modern-form">
-                
-                <div class="form-row">
-                    <div class="form-group float-group">
-                        <input type="text" name="nom" id="nom" placeholder=" " required>
-                        <label for="nom">Nom et prénom</label>
+        <div class="parcours-category">
+            <h3 class="category-title"><i class="fas fa-briefcase"></i> Expériences Professionnelles</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan – Mars 2026</div>
+                    <div class="timeline-card experience-card">
+                        <h4>Stagiaire Support IT</h4>
+                        <p class="timeline-subtitle">Arvato, Chanteloup-en-Brie</p>
+                        <ul class="experience-details">
+                            <li>Interventions techniques en entrepôt logistique.</li>
+                            <li>Déploiement et installation de postes Windows 11.</li>
+                            <li>Gestion et résolution de tickets via Jira.</li>
+                        </ul>
                     </div>
-                    <div class="form-group float-group">
-                        <input type="email" name="email" id="email" placeholder=" " required>
-                        <label for="email">Votre mail*</label>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Juillet 2025</div>
+                    <div class="timeline-card experience-card">
+                        <h4>CDD Technicien Support IT (1 mois)</h4>
+                        <p class="timeline-subtitle">Arvato, Chanteloup-en-Brie</p>
+                        <ul class="experience-details">
+                            <li>Interventions extérieures (entrepôt).</li>
+                            <li>Gestion de tickets incidents (Jira).</li>
+                            <li>Installation de postes pour projet Beta.</li>
+                        </ul>
                     </div>
                 </div>
-                
-                <div class="form-group float-group">
-                    <input type="text" name="sujet" id="sujet" placeholder=" " required>
-                    <label for="sujet">Sujet du message*</label>
+                <div class="timeline-item">
+                    <div class="timeline-date">Juin – Juil 2025</div>
+                    <div class="timeline-card experience-card">
+                        <h4>Stagiaire Support IT</h4>
+                        <p class="timeline-subtitle">Arvato, Chanteloup-en-Brie</p>
+                        <ul class="experience-details">
+                            <li>Installation de postes Windows 11 et lecteurs de badges.</li>
+                            <li>Gestion de tickets incidents (Jira) et projet Beta.</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="form-group float-group full-width">
-                    <textarea name="message" id="message" placeholder=" " required></textarea>
-                    <label for="message">Détaillez votre demande...*</label>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mars 2023</div>
+                    <div class="timeline-card experience-card">
+                        <h4>Stagiaire Support IT</h4>
+                        <p class="timeline-subtitle">INSEEC, Paris</p>
+                        <ul class="experience-details">
+                            <li>Installation PC Windows 10, gestion GLPI, configuration projecteurs EPSON.</li>
+                            <li>Câblage CleverTouch, clonage de postes via Clonezilla (×10).</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <input type="hidden" name="_subject" value="Portfolio - Nouveau message reçu">
-                <input type="hidden" name="_captcha" value="false">
-                
-                <button type="submit" class="btn-primary pill-btn">
-                    Envoyer le message <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
+                <div class="timeline-item">
+                    <div class="timeline-date">Nov – Déc 2022</div>
+                    <div class="timeline-card experience-card">
+                        <h4>Stagiaire Support IT</h4>
+                        <p class="timeline-subtitle">Arvato, Bussy-Saint-Georges</p>
+                        <ul class="experience-details">
+                            <li>Gestion de tickets incidents via Jira.</li>
+                            <li>Configuration Auto-Pilot Windows pour nouveaux appareils.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mai – Juil 2022</div>
+                    <div class="timeline-card experience-card">
+                        <h4>Stagiaire Support IT</h4>
+                        <p class="timeline-subtitle">Arvato, Bussy-Saint-Georges</p>
+                        <ul class="experience-details">
+                            <li>Configuration de switchs Cisco (3750, 2690).</li>
+                            <li>Installation Windows 10 et imprimantes sans fil.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mai – Juil 2021</div>
+                    <div class="timeline-card experience-card">
+                        <h4>Stagiaire Technicien Informatique</h4>
+                        <p class="timeline-subtitle">Conseil Départemental 77, Melun</p>
+                        <ul class="experience-details">
+                            <li>Installation PC Windows 10 en collèges.</li>
+                            <li>Scripts batch pour installation automatisée de logiciels.</li>
+                            <li>Utilisation serveur Windows et interventions extérieures.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
 
-    </main>
-    <script src="veilles.js"></script>
-    <script>
-        // JavaScript pour la navigation et l'année en cours
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link, .quick-link-btn');
-            const contentSections = document.querySelectorAll('.content-section');
+        <div class="parcours-category">
+            <h3 class="category-title"><i class="fas fa-utensils"></i> Expériences Complémentaires</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Avr 2023 – Auj.</div>
+                    <div class="timeline-card complement-card">
+                        <h4>Job étudiant / Extra — Service Hôtellerie</h4>
+                        <p class="timeline-subtitle">Novotel, Collégien</p>
+                        <ul class="experience-details">
+                            <li>Service en salle, accueil clientèle internationale (anglais).</li>
+                            <li>Rigueur dans l'application des normes d'hygiène et sécurité.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            function showSection(targetId) {
-                contentSections.forEach(section => {
-                    section.classList.remove('active-section');
-                });
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
+    <!-- PROJETS -->
+    <section id="projets" class="content-section">
+        <h2 class="section-title">Mes Projets</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-card-top">🖥️</div>
+                <div class="project-info">
+                    <h3>Windows Server 2022</h3>
+                    <p>Installation d'Active Directory, configuration du GPO et déploiement Powershell.</p>
+                    <a href="Windows Server 2022 - Active Directory, GPO, déploiement et Powershell.pdf" class="btn-secondary" target="_blank">Voir Détails <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-top">🔁</div>
+                <div class="project-info">
+                    <h3>Failover Heartbeat & LVS</h3>
+                    <p>Déploiement d'un Failover avec Heartbeat et Linux Virtual Server.</p>
+                    <a href="FAILOVER HEARBEAT ET LVS.pdf" class="btn-secondary" target="_blank">Voir Détails <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-top">💾</div>
+                <div class="project-info">
+                    <h3>Tolérance de panne RAID</h3>
+                    <p>Mise en œuvre d'une solution RAID1 et RAID5 sous Debian.</p>
+                    <a href="Tolérance de panne disques RAID sous Debian.pdf" class="btn-secondary" target="_blank">Voir Détails <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-top">☁️</div>
+                <div class="project-info">
+                    <h3>NextCloud</h3>
+                    <p>Installation et configuration d'une instance NextCloud.</p>
+                    <a href="NextCloud.pdf" class="btn-secondary" target="_blank">Voir Détails <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.add('active-section');
-                }
+    <!-- VEILLES -->
+    <section id="veilles" class="content-section">
+        <h2 class="section-title">Veille Technologique</h2>
+        <p class="veille-intro">Suivi des dernières actualités sur les enjeux et évolutions de l'authentification multifacteur (MFA) et de la sécurisation des accès, alimenté par mes alertes Google.</p>
 
-                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-                 // Mettre à jour l'URL sans recharger la page
-                if (history.pushState) {
-                    history.pushState(null, null, `#${targetId}`);
-                } else {
-                    window.location.hash = `#${targetId}`;
+        <div class="veille-synthese-container">
+            <div class="synthese-card">
+                <div class="synthese-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="synthese-info">
+                    <h3>Synthèse de Veille Technologique</h3>
+                    <p>Choix du sujet, méthodologie adoptée et analyse des enjeux du MFA.</p>
+                </div>
+                <div class="synthese-action">
+                    <a href="Veille Techno - l'authentification MFA - Alvin.pdf" target="_blank" class="btn-synthese">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Articles Clés Sélectionnés</h3>
+        <div class="veille-articles-grid">
+            <article class="veille-article-card">
+                <div class="veille-article-content">
+                    <h3>La récente fuite de données médicales des Français</h3>
+                    <p class="veille-source">Source : x.com</p>
+                    <p class="veille-summary">Exploration sur la fuite de données venant d'une cyberattaque.</p>
+                    <a href="https://x.com/Fraslin/status/2030045186563396072" class="btn-secondary" target="_blank" rel="noopener noreferrer">Lire l'article <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </article>
+            <article class="veille-article-card">
+                <div class="veille-article-content">
+                    <h3>Pourquoi les menaces liées à la cybersécurité se multiplient ?</h3>
+                    <p class="veille-source">Source : timefrance.fr</p>
+                    <p class="veille-summary">Exploration sur l'impact de l'IA dans la cybersécurité.</p>
+                    <a href="https://www.timefrance.fr/idees/pourquoi-les-menaces-liees-a-la-cybersecurite-se-multiplient/" class="btn-secondary" target="_blank" rel="noopener noreferrer">Lire l'article <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <div class="veille-tools">
+            <h4>Outils et Méthodes de Veille</h4>
+            <ul>
+                <li><i class="fab fa-google"></i> Google Alerts — suivi automatisé sur "L'authentification multifacteur".</li>
+                <li><i class="fas fa-rss"></i> Agrégateurs de flux RSS (Feedly) pour d'autres sources.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="content-section">
+        <div class="section-header">
+            <h2 class="modern-title">Contact</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="contact-card-premium">
+            <div class="contact-sidebar">
+                <div>
+                    <h3>N'hésitez pas à me contacter !</h3>
+                    <p>Ravi d'échanger sur des opportunités professionnelles ou des collaborations techniques.</p>
+                </div>
+                <div class="quick-contact-methods">
+                    <a href="mailto:alvin.synth.pro@gmail.com" class="method-item" aria-label="Email"><i class="fas fa-at"></i></a>
+                    <a href="https://www.linkedin.com/in/alvin-sayanthan" target="_blank" class="method-item" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-premium">
+                <form action="https://formsubmit.co/alvin.synth.pro@gmail.com" method="POST" class="modern-form">
+                    <div class="form-row">
+                        <div class="float-group">
+                            <input type="text" name="nom" id="nom" placeholder=" " required>
+                            <label for="nom">Nom et prénom</label>
+                        </div>
+                        <div class="float-group">
+                            <input type="email" name="email" id="email" placeholder=" " required>
+                            <label for="email">Votre mail*</label>
+                        </div>
+                    </div>
+                    <div class="float-group">
+                        <input type="text" name="sujet" id="sujet" placeholder=" " required>
+                        <label for="sujet">Sujet du message*</label>
+                    </div>
+                    <div class="float-group">
+                        <textarea name="message" id="message" placeholder=" " required></textarea>
+                        <label for="message">Détaillez votre demande...*</label>
+                    </div>
+                    <input type="hidden" name="_subject" value="Portfolio — Nouveau message reçu">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="pill-btn">
+                        Envoyer le message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link, .quick-link-btn[data-target]');
+    const sections = document.querySelectorAll('.content-section');
+    const sidebar  = document.getElementById('sidebar');
+    const hamburger= document.getElementById('hamburger');
+    const overlay  = document.getElementById('overlay');
+
+    function showSection(id) {
+        sections.forEach(s => s.classList.remove('active-section'));
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        const sec = document.getElementById(id);
+        if (sec) sec.classList.add('active-section');
+        const lnk = document.querySelector(`.nav-link[data-target="${id}"]`);
+        if (lnk) lnk.classList.add('active');
+        if (history.pushState) history.pushState(null, null, `#${id}`);
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = link.dataset.target;
+            if (target) {
+                showSection(target);
+                // Close sidebar on mobile
+                if (window.innerWidth <= 900) {
+                    sidebar.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    overlay.classList.remove('active');
                 }
             }
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const targetId = link.dataset.target;
-                    showSection(targetId);
-                });
-            });
-
-            // Gérer le hash initial dans l'URL (pour les favoris/partage/rechargement)
-            let initialTarget = 'accueil'; // Section par défaut
-            if (window.location.hash) {
-                const hashId = window.location.hash.substring(1);
-                if (document.getElementById(hashId)) { // Vérifie si la section existe
-                    initialTarget = hashId;
-                }
-            }
-            showSection(initialTarget);
-
-            // Mettre à jour l'année en cours dans le footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
-        
-    </script>
+    });
+
+    // Hamburger
+    hamburger.addEventListener('click', () => {
+        const open = sidebar.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        overlay.classList.toggle('active', open);
+    });
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        hamburger.classList.remove('open');
+        overlay.classList.remove('active');
+    });
+
+    // Initial section
+    let init = 'accueil';
+    if (window.location.hash) {
+        const h = window.location.hash.substring(1);
+        if (document.getElementById(h)) init = h;
+    }
+    showSection(init);
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+});
+</script>
 </body>
 </html>
