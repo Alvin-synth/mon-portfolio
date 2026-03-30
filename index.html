@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio — Alvin SAYANTHAN</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
@@ -303,6 +303,11 @@
             </div>
         </div>
 
+        <div class="feed-section-label"><i class="fas fa-satellite-dish"></i> Alertes Google en direct</div>
+        <div id="google-alerts-feed-container" class="veille-articles-grid">
+            <p class="loading-feed">Chargement des dernières alertes...</p>
+        </div>
+
         <h3 class="subsection-title">Articles Clés Sélectionnés</h3>
         <div class="veille-articles-grid">
             <article class="veille-article-card">
@@ -345,12 +350,12 @@
                     <p>Ravi d'échanger sur des opportunités professionnelles ou des collaborations techniques.</p>
                 </div>
                 <div class="quick-contact-methods">
-                    <a href="mailto:alvin.synth.pro@gmail.com" class="method-item" aria-label="Email"><i class="fas fa-at"></i></a>
+                    <a href="/cdn-cgi/l/email-protection#ddbcb1abb4b3f3aea4b3a9b5f3adafb29dbab0bcb4b1f3beb2b0" class="method-item" aria-label="Email"><i class="fas fa-at"></i></a>
                     <a href="https://www.linkedin.com/in/alvin-sayanthan" target="_blank" class="method-item" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="contact-form-premium">
-                <form action="https://formsubmit.co/alvin.synth.pro@gmail.com" method="POST" class="modern-form">
+                <form id="contactForm" action="https://formsubmit.co/ajax/alvin.synth.pro@gmail.com" method="POST" class="modern-form">
                     <div class="form-row">
                         <div class="float-group">
                             <input type="text" name="nom" id="nom" placeholder=" " required>
@@ -369,12 +374,20 @@
                         <textarea name="message" id="message" placeholder=" " required></textarea>
                         <label for="message">Détaillez votre demande...*</label>
                     </div>
-                    <input type="hidden" name="_subject" value="Portfolio — Nouveau message reçu">
+                    <input type="hidden" name="_subject" value="Portfolio — Nouveau message recu">
                     <input type="hidden" name="_captcha" value="false">
-                    <button type="submit" class="pill-btn">
+                    <button type="submit" class="pill-btn" id="submitBtn">
                         Envoyer le message <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
+                <div id="formSuccess" class="form-success-msg" style="display:none;">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Message envoyé !</h3>
+                    <p>Merci pour votre message. Je vous répondrai dans les meilleurs délais.</p>
+                    <button class="pill-btn" id="resetFormBtn" style="margin-top:20px;">
+                        Envoyer un autre message <i class="fas fa-redo"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -382,12 +395,69 @@
 </main>
 
 <script>
+// ─── GOOGLE ALERTS FEED ───
+async function fetchAndDisplayGoogleAlerts() {
+    const feedContainer = document.getElementById('google-alerts-feed-container');
+    if (!feedContainer) return;
+
+    const googleAlertRssUrl = 'https://www.google.fr/alerts/feeds/00423473392342493047/12699287199964468269';
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(googleAlertRssUrl)}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+            feedContainer.innerHTML = '';
+            data.items.slice(0, 6).forEach(item => {
+                const card = document.createElement('article');
+                card.className = 'veille-article-card dynamic-feed-item';
+
+                let imageUrl = item.thumbnail;
+                if (!imageUrl && item.enclosure && item.enclosure.type && item.enclosure.type.startsWith('image/'))
+                    imageUrl = item.enclosure.link;
+
+                const imageHtml = imageUrl
+                    ? `<img src="${imageUrl}" alt="${item.title}" class="veille-article-image">`
+                    : `<div class="veille-article-image-placeholder"><i class="fas fa-newspaper"></i></div>`;
+
+                const tmp = document.createElement('div');
+                tmp.innerHTML = item.description || item.content || '';
+                const snippet = (tmp.textContent || tmp.innerText || '').substring(0, 120) + '...';
+
+                let hostname = '';
+                try { hostname = new URL(item.link).hostname; } catch(e) { hostname = item.link; }
+                const date = new Date(item.pubDate).toLocaleDateString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric' });
+
+                card.innerHTML = `
+                    ${imageHtml}
+                    <div class="veille-article-content">
+                        <h3>${item.title}</h3>
+                        <p class="veille-source">Source : ${hostname} &nbsp;·&nbsp; ${date}</p>
+                        <p class="veille-summary">${snippet}</p>
+                        <a href="${item.link}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                            Lire l'article <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>`;
+                feedContainer.appendChild(card);
+            });
+        } else {
+            feedContainer.innerHTML = '<p class="error-feed"><i class="fas fa-exclamation-circle"></i>&nbsp;Aucune alerte récente trouvée.</p>';
+        }
+    } catch (err) {
+        feedContainer.innerHTML = '<p class="error-feed"><i class="fas fa-wifi"></i>&nbsp;Impossible de charger les alertes pour le moment.</p>';
+        console.error('Google Alerts fetch error:', err);
+    }
+}
+
+// ─── NAVIGATION ───
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-link, .quick-link-btn[data-target]');
-    const sections = document.querySelectorAll('.content-section');
-    const sidebar  = document.getElementById('sidebar');
-    const hamburger= document.getElementById('hamburger');
-    const overlay  = document.getElementById('overlay');
+    const navLinks  = document.querySelectorAll('.nav-link, .quick-link-btn[data-target]');
+    const sections  = document.querySelectorAll('.content-section');
+    const sidebar   = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    const overlay   = document.getElementById('overlay');
 
     function showSection(id) {
         sections.forEach(s => s.classList.remove('active-section'));
@@ -396,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sec) sec.classList.add('active-section');
         const lnk = document.querySelector(`.nav-link[data-target="${id}"]`);
         if (lnk) lnk.classList.add('active');
-        if (history.pushState) history.pushState(null, null, `#${id}`);
+        if (history.pushState) history.pushState(null, null, '#' + id);
     }
 
     navLinks.forEach(link => {
@@ -405,7 +475,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = link.dataset.target;
             if (target) {
                 showSection(target);
-                // Close sidebar on mobile
                 if (window.innerWidth <= 900) {
                     sidebar.classList.remove('open');
                     hamburger.classList.remove('open');
@@ -415,7 +484,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hamburger
     hamburger.addEventListener('click', () => {
         const open = sidebar.classList.toggle('open');
         hamburger.classList.toggle('open');
@@ -427,7 +495,6 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('active');
     });
 
-    // Initial section
     let init = 'accueil';
     if (window.location.hash) {
         const h = window.location.hash.substring(1);
@@ -435,64 +502,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     showSection(init);
 
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-});
+    const yr = document.getElementById('currentYear');
+    if (yr) yr.textContent = new Date().getFullYear();
 
- <script src="veilles.js"></script>
-    <script>
-        // JavaScript pour la navigation et l'année en cours
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link, .quick-link-btn');
-            const contentSections = document.querySelectorAll('.content-section');
+    fetchAndDisplayGoogleAlerts();
 
-            function showSection(targetId) {
-                contentSections.forEach(section => {
-                    section.classList.remove('active-section');
+    // ─── CONTACT FORM AJAX ───
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const submitBtn   = document.getElementById('submitBtn');
+    const resetFormBtn = document.getElementById('resetFormBtn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            submitBtn.innerHTML = 'Envoi en cours... <i class="fas fa-spinner"></i>';
+
+            const data = new FormData(contactForm);
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/alvin.synth.pro@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: data
                 });
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
 
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.add('active-section');
-                }
+                const json = await response.json();
 
-                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-                 // Mettre à jour l'URL sans recharger la page
-                if (history.pushState) {
-                    history.pushState(null, null, `#${targetId}`);
+                if (response.ok && json.success === 'true') {
+                    contactForm.style.display = 'none';
+                    formSuccess.style.display = 'flex';
                 } else {
-                    window.location.hash = `#${targetId}`;
+                    throw new Error(json.message || 'Erreur serveur');
                 }
-            }
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const targetId = link.dataset.target;
-                    showSection(targetId);
-                });
-            });
-
-            // Gérer le hash initial dans l'URL (pour les favoris/partage/rechargement)
-            let initialTarget = 'accueil'; // Section par défaut
-            if (window.location.hash) {
-                const hashId = window.location.hash.substring(1);
-                if (document.getElementById(hashId)) { // Vérifie si la section existe
-                    initialTarget = hashId;
+            } catch (err) {
+                console.error(err);
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+                submitBtn.innerHTML = 'Envoyer le message <i class="fas fa-paper-plane"></i>';
+                // Afficher erreur inline
+                let errBox = document.getElementById('formError');
+                if (!errBox) {
+                    errBox = document.createElement('p');
+                    errBox.id = 'formError';
+                    errBox.style.cssText = 'color:#e74c3c;font-size:0.88rem;margin-top:12px;display:flex;align-items:center;gap:8px;';
+                    submitBtn.parentNode.insertBefore(errBox, submitBtn.nextSibling);
                 }
+                errBox.innerHTML = '<i class="fas fa-exclamation-circle"></i> Une erreur est survenue. Vérifiez votre connexion ou contactez-moi directement par email.';
             }
-            showSection(initialTarget);
-
-            // Mettre à jour l'année en cours dans le footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            return false;
         });
-        
-    </script>
+    }
+
+    if (resetFormBtn) {
+        resetFormBtn.addEventListener('click', () => {
+            contactForm.reset();
+            contactForm.style.display = 'block';
+            formSuccess.style.display = 'none';
+            submitBtn.classList.remove('loading');
+            submitBtn.innerHTML = 'Envoyer le message <i class="fas fa-paper-plane"></i>';
+        });
+    }
+});
 </script>
 </body>
 </html>
